@@ -19,7 +19,6 @@ body, html, div {
 
 #tv {
 	display: block;
-	background-image: url("../images/overlay.png");
 	background-size: 100% 100%;
 }
 
@@ -28,6 +27,13 @@ body, html, div {
 	text-align: center; color: #000;
 }
 
+#counter {
+	position: relative;
+	bottom: 40px;
+	left: 10px;
+	color: #fff;
+	font-size: 2rem;
+}
 
 p {
 	font-size: 1.7em; 

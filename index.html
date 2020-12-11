@@ -35,11 +35,13 @@
 
 	<body onload="getImage();">
 
-		<div id="tv" onclick="getImage();">
+		<div id="tv"">
 			<div id="content">
 				<p id="title"></p>
 			</div>
 		</div>
+
+		<div id="counter"></div>
 
 		<a href="https://twitter.com/RdSd_America_US" target="_blank" rel="noreferrer noopener"><span id="built-with"><img src="images/twitter.png" id="twitter" align="absmiddle" /> Follow Us On Twitter</span></a>
 
@@ -54,12 +56,24 @@
 						document.title = "Roadside America - " + data.results.title;
 						document.getElementById("title").innerHTML = "Roadside America - " + data.results.title;
 						document.getElementById("tv").style.backgroundImage = "url('" + data.results.images.large + "')";
+						counter();
 					})
 					.catch(err => {
 						document.title = "Roadside America";
-						document.getElementById("tv").style.backgroundImage = "url('images/tv.png'), url('images/overlay.png'), url('images/roadside-america.png')";
-						document.getElementById("mobile").style.backgroundImage = "url('images/overlay.png'), url('images/roadside-america.png')";
+						document.getElementById("title").innerHTML = "Roadside America";
+						document.getElementById("tv").style.backgroundImage = "url('images/roadside-america.jpg')";
 					});
+			}
+			function counter() {
+				let counter = 30;
+				let countDown = setInterval(function(){
+					document.getElementById("counter").innerHTML = counter.toString();
+					counter--
+					if (counter === -1) {
+						clearInterval(countDown);
+						getImage()
+					}
+				}, 3000);
 			}
 		</script>
 	</body>
