@@ -41,22 +41,6 @@
 			</div>
 		</div>
 
-		<div id="mobile" onclick="getImage();">
-			<div id="mobile-content">
-				<p id="mobile-title"></p>
-			</div>
-		</div>
-
-		<div id="social">
-			<!-- AddToAny BEGIN -->
-			<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-				<a class="a2a_button_facebook"></a>
-				<a class="a2a_button_twitter"></a>
-			</div>
-			<script src="//static.addtoany.com/menu/page.js"></script>
-			<!-- AddToAny END -->
-		</div>
-
 		<a href="https://twitter.com/RdSd_America_US" target="_blank" rel="noreferrer noopener"><span id="built-with"><img src="images/twitter.png" id="twitter" align="absmiddle" /> Follow Us On Twitter</span></a>
 
 		<script>
@@ -69,9 +53,7 @@
 					.then((data) => {
 						document.title = "Roadside America - " + data.results.title;
 						document.getElementById("title").innerHTML = "Roadside America - " + data.results.title;
-						document.getElementById("mobile-title").innerHTML = "Roadside America - " + data.results.title;
-						document.getElementById("tv").style.backgroundImage = "url('images/tv.png'), url('images/overlay.png'), url('" + data.results.images.large + "')";
-						document.getElementById("mobile").style.backgroundImage = "url('images/overlay.png'), url('" + data.results.images.large + "')";
+						document.getElementById("tv").style.backgroundImage = "url('" + data.results.images.large + "')";
 					})
 					.catch(err => {
 						document.title = "Roadside America";
