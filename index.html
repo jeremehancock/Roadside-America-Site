@@ -68,13 +68,13 @@
 					.then(res => res.json())
 					.then((data) => {
 						document.title = data.results.title;
-						document.getElementById("title").innerHTML = data.results.title;
-						document.getElementById("mobile-title").innerHTML = data.results.title;
+						document.getElementById("title").innerHTML = "Roadside America - " + data.results.title;
+						document.getElementById("mobile-title").innerHTML = "Roadside America - " + data.results.title;
 						document.getElementById("tv").style.backgroundImage = "url('images/tv.png'), url('images/overlay.png'), url('" + data.results.images.large + "')";
 						document.getElementById("mobile").style.backgroundImage = "url('images/overlay.png'), url('" + data.results.images.large + "')";
 					})
 					.catch(err => {
-						document.title = "Roadside America API Demo";
+						document.title = "Roadside America";
 						document.getElementById("tv").style.backgroundImage = "url('images/tv.png'), url('images/overlay.png'), url('images/roadside-america.png')";
 						document.getElementById("mobile").style.backgroundImage = "url('images/overlay.png'), url('images/roadside-america.png')";
 					});
